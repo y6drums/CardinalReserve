@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/Users/tylermayfield/Documents/Cardinal Reserve';
+const ROOT = path.resolve(__dirname, '..');
 const PORT = parseInt(process.env.PORT || '8766', 10);
 
 const TYPES = {

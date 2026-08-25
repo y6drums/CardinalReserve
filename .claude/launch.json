@@ -4,7 +4,7 @@
     {
       "name": "cardinal-reserve",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["/Users/tylermayfield/Documents/Cardinal Reserve/.claude/serve.js"],
+      "runtimeArgs": [".claude/serve.js"],
       "port": 8766,
       "autoPort": true
     }
