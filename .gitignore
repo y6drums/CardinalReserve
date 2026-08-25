@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local Claude Code permission cache (machine-specific paths)
+.claude/settings.local.json

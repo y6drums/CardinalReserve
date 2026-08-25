@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cardinal-reserve",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/tylermayfield/Documents/Cardinal Reserve/.claude/serve.js"],
+      "port": 8766,
+      "autoPort": true
+    }
+  ]
+}
