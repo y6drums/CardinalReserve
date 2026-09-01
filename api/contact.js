@@ -59,6 +59,10 @@ export default async function handler(req, res) {
     .map(([k, v]) => `${k}: ${v}`)
     .join('\n');
 
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const payload = { from: FROM, to: [TO], subject, html, text };
+  if (EMAIL_RE.test(email)) payload.reply_to = email;
+
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -66,14 +70,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${key}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        from: FROM,
-        to: [TO],
-        reply_to: email,
-        subject,
-        html,
-        text,
-      }),
+      body: JSON.stringify(payload),
     });
 
     if (!r.ok) {
